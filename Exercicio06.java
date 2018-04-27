@@ -5,9 +5,9 @@ import javax.swing.JOptionPane;
 		public static void main (String[]args){
 
 		int pedido=0;
-		int quantidadeProdutos = 1;
-		int totalPreco = 0;
+		int quantidadeProdutos = -1;
 		double calculoPreco = 0;
+		int bolos = 0, doces = 0, sanduiches = 0, pizzas = 0;
 
 		while(pedido!=16){
 		pedido = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -31,24 +31,6 @@ import javax.swing.JOptionPane;
 		"\n16 - SAIR"
 		));
 		quantidadeProdutos = quantidadeProdutos + 1;
-		}
-
-		double produto1 = 29.50;
-		double produto2 = 2.00;
-		double produto3 = 29.23;
-		double produto4 = 7.10;
-		double produto5 = 19.33;
-		double produto6 = 17.71;
-		double produto7 = 4.82;
-		double produto8 = 21.16;
-		double produto9 = 12.70;
-		double produto10 = 19.70;
-		double produto11 = 28.22;
-		double produto12 = 8.98;
-		double produto13 = 0.42;
-		double produto14 = 18.36;
-		double produto15 = 27.50;
-
 		if(pedido == 1){
 			calculoPreco = calculoPreco+29.50;
 		}if(pedido == 2){
@@ -73,7 +55,35 @@ import javax.swing.JOptionPane;
 			calculoPreco = calculoPreco+28.22;
 		}if(pedido == 12){
 			calculoPreco = calculoPreco+8.98;
+		}if(pedido == 13){
+			calculoPreco = calculoPreco+0.42;
+		}if(pedido == 14){
+			calculoPreco = calculoPreco+18.36;
+		}if(pedido == 15){
+			calculoPreco = calculoPreco+27.50;
 		}
 
+		if((pedido == 1) || (pedido == 2) || (pedido == 3) || (pedido == 4) || (pedido == 5)){
+			bolos = bolos+1;
+		}if((pedido == 6) || (pedido == 7)){
+			doces = doces+1;
+		}if((pedido == 8) || (pedido == 9) || (pedido == 10) || (pedido == 11)){
+			sanduiches = sanduiches+1;
+		}if((pedido == 12) || (pedido == 13) ||(pedido == 14) | (pedido == 15)){
+			pizzas = pizzas+1;
+		}
+		}
+		JOptionPane.showMessageDialog(null,
+		"A quantidade de produtos escolhidos é: "+quantidadeProdutos+
+		"\nTotalizando R$ "+calculoPreco
+		);
+
+		JOptionPane.showMessageDialog(null,
+		"A quantidade de bolos escolhidos é: "+bolos+
+		"\nA quantidade de doces escolhidos é: "+doces+
+		"\nA quantidade de sanduíches escolhidos é: "+sanduiches+
+		"\nA quantidade de pizzas escolhidas é: "+pizzas+
+		"\nA média dos produtos escolhidos é: "+(calculoPreco/quantidadeProdutos)
+		);
 		}
 	}
