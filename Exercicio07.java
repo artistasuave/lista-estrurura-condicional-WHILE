@@ -5,8 +5,8 @@ public class Exercicio07{
     public static void main(String[]args){
 
         String nome = " ", sexo = " ";
-        int idade = 0, gols = 0, cartoesAmarelos = 0, cartoesVermelhos = 0, jogadores = 0, contador = 0;
-        double peso = 0, altura = 0;
+        int idade = 0, gols = 0, cartoesAmarelos = 0, cartoesVermelhos = 0, jogadores = 0, contador = 1;
+        double peso = 0, maiorPeso = Integer.MIN_VALUE, menorPeso = Integer.MAX_VALUE, altura = 0;
         
         //NÃO ESQUECER DE MUDAR O NÚMERO DO CONTADOR
         while(contador<=3){
@@ -29,12 +29,18 @@ public class Exercicio07{
         cartoesVermelhos = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe a quantidade de Cartões Vermelhos"));
         
         contador = contador + 1;
+
+        if (peso>maiorPeso){
+            maiorPeso = peso;
+        }else if(peso<menorPeso){
+            menorPeso = peso;
+        }
         
         }
 
         JOptionPane.showMessageDialog(null,
-        /*"O jogador com o menor peso é: "+
-        "\nO jogador com a maior altura é: "+
+        "O jogador com o menor peso é: "+menorPeso);
+        /*"\nO jogador com a maior altura é: "+
         "\nO jogador com o maior nome é: "+
         "\nA quantidade de jogadores do sexo F: "+
         "\nA quantidade de jogadores do sexo M: "+
@@ -44,6 +50,6 @@ public class Exercicio07{
         "\nO jogador com a maior quantidade de cartões vermelhos recebidos é: "+
         "\nO jogador com a maior quantidade de cartões amarelos recebidos é: "+
         "\nO jogador com a menor quantidade de cartões vermelhos recebidos é: "
-        */);
+        );*/
     }
 }
